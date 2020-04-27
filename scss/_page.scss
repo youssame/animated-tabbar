@@ -1,0 +1,81 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .content {
+        flex: 2;
+        display:none;
+        &#tab1 {
+            display: block;
+        }
+        &:nth-child(1) { background: $item-1-color; }
+        &:nth-child(2) { background: $item-2-color; }
+        &:nth-child(3) { background: $item-3-color; }
+        &:nth-child(4) { background: $item-4-color; }
+    }
+    .tabbar {
+        display: flex;
+        justify-content: space-around;
+        height: 50px;
+        padding-top: 20px;
+        .tabbar-item {
+            overflow: hidden;
+            position: relative;
+            height: 35px;
+            a {
+                transition: all 0.4s;
+                position: relative;
+                top: -18px;
+                display: block;
+                text-align: center;
+                color: $default-item-color;
+                &.active {
+                    top: -69px;
+                }
+                i {
+                    font-size: 18px;
+                    margin: 20px auto 10px auto;
+                }
+                &:after {
+                    content: "\2022";
+                    font-size: 25px;
+                }
+                i, &:after, span {
+                    display: block;
+                }
+                span {
+                    margin-top: 30px;
+                    margin-bottom: 0;
+                }
+                &:after {
+                    margin: 3px auto 5px auto;
+                }
+            }
+        }
+        .tabbar-item:nth-child(1) {
+            a {
+                color: $item-1-color;
+            }
+        }
+        .tabbar-item:nth-child(2) {
+            a {
+                color: $item-4-color;
+            }
+        }
+        .tabbar-item:nth-child(3) {
+            a {
+                color: $item-3-color;
+            }
+        }
+        .tabbar-item:nth-child(4) {
+            a {
+                color: $item-4-color;
+            }
+        }
+    }
+}
